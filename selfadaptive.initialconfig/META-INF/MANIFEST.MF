@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Initialconfig
+Bundle-SymbolicName: selfadaptive.initialconfig
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: selfadaptive.initialconfig.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Import-Package: org.osgi.framework;version="1.3.0",
+ sua.autonomouscar.devices.interfaces,
+ sua.autonomouscar.driving.interfaces,
+ sua.autonomouscar.driving.l0.manual,
+ sua.autonomouscar.driving.l1.assisteddriving,
+ sua.autonomouscar.infrastructure,
+ sua.autonomouscar.infrastructure.devices,
+ sua.autonomouscar.infrastructure.driving,
+ sua.autonomouscar.infrastructure.interaction
+Automatic-Module-Name: selfadaptive.initialconfig

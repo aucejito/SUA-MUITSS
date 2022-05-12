@@ -13,3 +13,4 @@ Import-Package: org.osgi.framework,
  sua.autonomouscar.simulation.interfaces
 Automatic-Module-Name: driving.L0.ManualDriving
 Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: sua.autonomouscar.driving.l0.manual
