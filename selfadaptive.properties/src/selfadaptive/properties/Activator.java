@@ -54,6 +54,31 @@ public class Activator implements BundleActivator {
 
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
+
+		// Driver properties
+		driverSeatOcuppied = new DriverSeatOcuppied();
+		faceStatus = new FaceStatus();
+		handsOnTheWheel = new HandsOnTheWheel();
+		humanSensorAvailable = new HumanSensorAvailable();
+
+		// Road properties
+		lateralSecurityDistance = new LateralSecurityDistance();
+		longSecurityDistance = new LongSecurityDistance();
+		referenceSpeed = new ReferenceSpeed();
+		roadStatus = new RoadStatus();
+		roadType = new RoadType();
+		roadStatusAvailable = new RoadStatusAvailable();
+		roadTypeAvailable = new RoadTypeAvailable();
+
+		// System properties
+		activeDrivingService = new ActiveDrivingService();
+		frontDistanceSensorAvailable = new DistanceSensorAvailable();
+		rearDistanceSensorAvailable = new DistanceSensorAvailable();
+		lidarSensorAvailable = new LidarSensorAvailable();
+		rightLineSensorAvailable = new LineSensorAvailable();
+		leftLineSensorAvailable = new LineSensorAvailable();
+		notificationServiceAvailable = new NotificationServiceAvailable();
+
 	}
 
 	public void stop(BundleContext bundleContext) throws Exception {
