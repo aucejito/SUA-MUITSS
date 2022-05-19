@@ -5,5 +5,6 @@ Bundle-SymbolicName: selfadaptive.probes
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: selfadaptive.probes.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Import-Package: org.osgi.framework;version="1.3.0"
+Import-Package: org.osgi.framework;version="1.3.0",
+ selfadaptive.utils
 Automatic-Module-Name: selfadaptive.probes

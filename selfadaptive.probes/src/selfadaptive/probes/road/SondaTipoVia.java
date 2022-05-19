@@ -1,5 +1,7 @@
 package selfadaptive.probes.road;
 
-public class SondaTipoVia {
+import selfadaptive.utils.RoadTypeEnum;
 
+public class SondaTipoVia {
+	RoadTypeEnum newRoadType;
 }

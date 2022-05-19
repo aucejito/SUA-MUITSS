@@ -1,5 +1,7 @@
 package selfadaptive.probes.road;
 
-public class SondaEstadoVia {
+import selfadaptive.utils.RoadStatusEnum;
 
+public class SondaEstadoVia {
+	RoadStatusEnum newRoadStatus;
 }

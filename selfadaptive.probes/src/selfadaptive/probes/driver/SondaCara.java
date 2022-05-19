@@ -1,5 +1,7 @@
 package selfadaptive.probes.driver;
 
-public class SondaCara {
+import selfadaptive.utils.FaceStatusEnum;
 
+public class SondaCara {
+	FaceStatusEnum newFacetatus;
 }
