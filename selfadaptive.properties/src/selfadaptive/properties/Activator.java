@@ -119,6 +119,64 @@ public class Activator implements BundleActivator {
 
 	public void stop(BundleContext bundleContext) throws Exception {
 		Activator.context = null;
+
+		// Driver properties
+		driverSeatOcuppied.getServiceRegistration().unregister();
+		driverSeatOcuppied = null;
+
+		faceStatus.getServiceRegistration().unregister();
+		faceStatus = null;
+
+		handsOnTheWheel.getServiceRegistration().unregister();
+		handsOnTheWheel = null;
+
+		humanSensorAvailable.getServiceRegistration().unregister();
+		humanSensorAvailable = null;
+
+		// Road properties
+		// TODO Service unregistration
+		lateralSecurityDistance = null;
+
+		// TODO Service unregistration
+		longSecurityDistance = null;
+
+		// TODO Service unregistration
+		referenceSpeed = null;
+
+		roadStatus.getServiceRegistration().unregister();
+		roadStatus = null;
+
+		roadType.getServiceRegistration().unregister();
+		roadType = null;
+
+		roadStatusAvailable.getServiceRegistration().unregister();
+		roadStatusAvailable = null;
+
+		roadTypeAvailable.getServiceRegistration().unregister();
+		roadTypeAvailable = null;
+
+		// System properties
+		activeDrivingService.getServiceRegistration().unregister();
+		activeDrivingService = null;
+
+		frontDistanceSensorAvailable.getServiceRegistration().unregister();
+		frontDistanceSensorAvailable = null;
+
+		rearDistanceSensorAvailable.getServiceRegistration().unregister();
+		rearDistanceSensorAvailable = null;
+
+		lidarSensorAvailable.getServiceRegistration().unregister();
+		lidarSensorAvailable = null;
+
+		rightLineSensorAvailable.getServiceRegistration().unregister();
+		rightLineSensorAvailable = null;
+
+		leftLineSensorAvailable.getServiceRegistration().unregister();
+		leftLineSensorAvailable = null;
+
+		notificationServiceAvailable.getServiceRegistration().unregister();
+		notificationServiceAvailable = null;
+
 	}
 
 	public void serviceRegistrationKnowledge(PropertyKnowledge property) {
