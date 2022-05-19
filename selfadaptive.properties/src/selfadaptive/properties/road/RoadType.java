@@ -1,8 +1,25 @@
 package selfadaptive.properties.road;
 
-public class RoadType {
+import org.osgi.framework.BundleContext;
 
-	public enum ERoadType {
-		STD_ROAD, OFF_ROAD, HIGHWAY, CITY
+import selfadaptive.properties.PropertyKnowledge;
+import sua.autonomouscar.interfaces.ERoadType;
+
+public class RoadType extends PropertyKnowledge{
+
+	public RoadType(BundleContext ctx) {
+		super(ctx);
+		// TODO Auto-generated constructor stub
+		
+		addInterface(this.getClass().getName());
 	}
+	
+	public void setRoadType(ERoadType roadType) {
+		modifyKnowledge("roadtype", roadType);
+	}
+	
+	public ERoadType getRoadType() {
+		return (ERoadType) props.get("roadtype");
+	}
+
 }
