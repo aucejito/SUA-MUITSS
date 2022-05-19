@@ -19,6 +19,7 @@ import selfadaptive.properties.system.DistanceSensorAvailable;
 import selfadaptive.properties.system.LidarSensorAvailable;
 import selfadaptive.properties.system.LineSensorAvailable;
 import selfadaptive.properties.system.NotificationServiceAvailable;
+import sua.autonomouscar.interfaces.ESensorLocation;
 
 public class Activator implements BundleActivator {
 
@@ -72,7 +73,7 @@ public class Activator implements BundleActivator {
 
 		// System properties
 		activeDrivingService = new ActiveDrivingService();
-		frontDistanceSensorAvailable = new DistanceSensorAvailable();
+		frontDistanceSensorAvailable = new DistanceSensorAvailable(context, ESensorLocation.FRONT);
 		rearDistanceSensorAvailable = new DistanceSensorAvailable();
 		lidarSensorAvailable = new LidarSensorAvailable();
 		rightLineSensorAvailable = new LineSensorAvailable();
