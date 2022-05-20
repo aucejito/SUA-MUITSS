@@ -179,7 +179,7 @@ public class Activator implements BundleActivator {
 	}
 
 	public void serviceRegistrationKnowledge(PropertyKnowledge property) {
-		ServiceRegistration<?> service = this.context.registerService((String[]) property.implInterfacesList.toArray(),
+		ServiceRegistration<?> service = context.registerService((String[]) property.implInterfacesList.toArray(),
 				property, property.props);
 		property.setServiceRegistration(service);
 	}
