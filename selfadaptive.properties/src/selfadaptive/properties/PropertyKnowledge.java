@@ -26,6 +26,10 @@ public abstract class PropertyKnowledge {
 		serviceRegistration.setProperties(props);
 	}
 
+	protected Object getKnowledge(String prop) {
+		return props.get(prop);
+	}
+
 	public ServiceRegistration<?> getServiceRegistration() {
 		return serviceRegistration;
 	}
