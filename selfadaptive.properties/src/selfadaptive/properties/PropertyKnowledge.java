@@ -26,11 +26,6 @@ public abstract class PropertyKnowledge {
 		serviceRegistration.setProperties(props);
 	}
 
-	public ServiceRegistration<?> registerServiceKnowledge() {
-		this.serviceRegistration = this.context.registerService((String[]) implInterfacesList.toArray(), this, props);
-		return this.serviceRegistration;
-	}
-
 	public ServiceRegistration<?> getServiceRegistration() {
 		return serviceRegistration;
 	}

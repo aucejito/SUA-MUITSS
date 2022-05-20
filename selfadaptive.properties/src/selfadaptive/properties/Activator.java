@@ -59,7 +59,6 @@ public class Activator implements BundleActivator {
 
 		// Driver properties
 		driverSeatOcuppied = new DriverSeatOcuppied(context);
-		driverSeatOcuppied.registerServiceKnowledge();
 		serviceRegistrationKnowledge(driverSeatOcuppied);
 
 		faceStatus = new FaceStatus(context);
