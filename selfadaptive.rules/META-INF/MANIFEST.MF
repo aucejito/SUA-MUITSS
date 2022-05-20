@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rules
+Bundle-SymbolicName: selfadaptive.rules
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: selfadaptive.rules.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Import-Package: org.osgi.framework;version="1.3.0",
+ selfadaptive.properties.road,
+ sua.autonomouscar.driving.interfaces,
+ sua.autonomouscar.driving.l3.trafficjamchauffer,
+ sua.autonomouscar.infrastructure,
+ sua.autonomouscar.interfaces
+Automatic-Module-Name: selfadaptive.rules
+Require-Bundle: AutonomousCar.infrastructure
