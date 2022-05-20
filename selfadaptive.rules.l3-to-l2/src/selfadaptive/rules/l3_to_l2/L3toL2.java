@@ -26,14 +26,15 @@ public class L3toL2 implements ServiceListener {
 		currentDrivingService = OSGiUtils.getService(context, IDrivingService.class, String.format("(%s=%s)", DrivingService.ACTIVE, true));
 		
 		//Evaluate conditions
-		
+		LineSensorHealthStatus leftLine
 		// currentDrivingService is L3
 		if (currentDrivingService instanceof L3_DrivingService
 				//Roadtype == ERoadType.Standard || roadtype == offroad
 				) {
-			currentDrivingService.stopDriving();
+			currentDrivingService.stopDriving(); //yo pondría unregister que ya hará el stop pertinente
 			
 			//Check necessary sensors
+			
 			//Perform the action
 			L2_AdaptiveCruiseControl newDrivingService = new L2_AdaptiveCruiseControl(context, "L2_AdaptiveCruiseControl");
 			newDrivingService.registerThing();
