@@ -71,14 +71,14 @@ public class Activator implements BundleActivator {
 		serviceRegistrationKnowledge(humanSensorAvailable);
 
 		// Road properties
-		lateralSecurityDistance = new LateralSecurityDistance();
-		// TODO Service Registration
+		lateralSecurityDistance = new LateralSecurityDistance(context);
+		serviceRegistrationKnowledge(lateralSecurityDistance);
 
-		longSecurityDistance = new LongSecurityDistance();
-		// TODO Service Registration
+		longSecurityDistance = new LongSecurityDistance(context);
+		serviceRegistrationKnowledge(longSecurityDistance);
 
-		referenceSpeed = new ReferenceSpeed();
-		// TODO Service Registration
+		referenceSpeed = new ReferenceSpeed(context);
+		serviceRegistrationKnowledge(referenceSpeed);
 
 		roadStatus = new RoadStatus(context);
 		serviceRegistrationKnowledge(roadStatus);
@@ -133,13 +133,13 @@ public class Activator implements BundleActivator {
 		humanSensorAvailable = null;
 
 		// Road properties
-		// TODO Service unregistration
+		lateralSecurityDistance.getServiceRegistration().unregister();
 		lateralSecurityDistance = null;
 
-		// TODO Service unregistration
+		longSecurityDistance.getServiceRegistration().unregister();
 		longSecurityDistance = null;
 
-		// TODO Service unregistration
+		referenceSpeed.getServiceRegistration().unregister();
 		referenceSpeed = null;
 
 		roadStatus.getServiceRegistration().unregister();
