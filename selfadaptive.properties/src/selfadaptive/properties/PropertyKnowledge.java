@@ -12,17 +12,31 @@ public abstract class PropertyKnowledge {
 	protected Dictionary<String, Object> props;
 	protected ArrayList<String> implInterfacesList;
 	private ServiceRegistration<?> serviceRegistration;
-	
+
 	public PropertyKnowledge(BundleContext ctx) {
 		context = ctx;
 	}
-	
+
 	protected void addInterface(String name) {
 		implInterfacesList.add(name);
 	}
-	
+
 	protected void modifyKnowledge(String prop, Object newValue) {
 		props.put(prop, newValue);
 		serviceRegistration.setProperties(props);
 	}
-}	
+
+	public ServiceRegistration<?> registerServiceKnowledge() {
+		this.serviceRegistration = this.context.registerService((String[]) implInterfacesList.toArray(), this, props);
+		return this.serviceRegistration;
+	}
+
+	public ServiceRegistration<?> getServiceRegistration() {
+		return serviceRegistration;
+	}
+
+	public void setServiceRegistration(ServiceRegistration<?> serviceRegistration) {
+		this.serviceRegistration = serviceRegistration;
+	}
+
+}
