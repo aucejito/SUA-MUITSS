@@ -59,78 +59,60 @@ public class Activator implements BundleActivator {
 
 		// Driver properties
 		driverSeatOcuppied = new DriverSeatOcuppied(context);
-		driverSeatOcuppied.serviceRegistration();
-//		serviceRegistrationKnowledge(driverSeatOcuppied);
+		serviceRegistrationKnowledge(driverSeatOcuppied);
 
 		faceStatus = new FaceStatus(context);
-		faceStatus.serviceRegistration();
-//		serviceRegistrationKnowledge(faceStatus);
+		serviceRegistrationKnowledge(faceStatus);
 
 		handsOnTheWheel = new HandsOnTheWheel(context);
-		handsOnTheWheel.serviceRegistration();
-//		serviceRegistrationKnowledge(handsOnTheWheel);
+		serviceRegistrationKnowledge(handsOnTheWheel);
 
 		humanSensorAvailable = new HumanSensorAvailable(context);
-		humanSensorAvailable.serviceRegistration();
-//		serviceRegistrationKnowledge(humanSensorAvailable);
+		serviceRegistrationKnowledge(humanSensorAvailable);
 
 		// Road properties
 		lateralSecurityDistance = new LateralSecurityDistance(context);
-		lateralSecurityDistance.serviceRegistration();
-//		serviceRegistrationKnowledge(lateralSecurityDistance);
+		serviceRegistrationKnowledge(lateralSecurityDistance);
 
 		longSecurityDistance = new LongSecurityDistance(context);
-		longSecurityDistance.serviceRegistration();
-//		serviceRegistrationKnowledge(longSecurityDistance);
+		serviceRegistrationKnowledge(longSecurityDistance);
 
 		referenceSpeed = new ReferenceSpeed(context);
-		referenceSpeed.serviceRegistration();
-//		serviceRegistrationKnowledge(referenceSpeed);
+		serviceRegistrationKnowledge(referenceSpeed);
 
 		roadStatus = new RoadStatus(context);
-		roadStatus.serviceRegistration();
-//		serviceRegistrationKnowledge(roadStatus);
+		serviceRegistrationKnowledge(roadStatus);
 
 		roadType = new RoadType(context);
-		roadType.serviceRegistration();
-//		serviceRegistrationKnowledge(roadType);
+		serviceRegistrationKnowledge(roadType);
 
 		roadStatusAvailable = new RoadStatusAvailable(context);
-		roadStatusAvailable.serviceRegistration();
-//		serviceRegistrationKnowledge(roadStatusAvailable);
+		serviceRegistrationKnowledge(roadStatusAvailable);
 
 		roadTypeAvailable = new RoadTypeAvailable(context);
-		roadTypeAvailable.serviceRegistration();
-//		serviceRegistrationKnowledge(roadTypeAvailable);
+		serviceRegistrationKnowledge(roadTypeAvailable);
 
 		// System properties
 		activeDrivingService = new ActiveDrivingService(bundleContext);
-		activeDrivingService.serviceRegistration();
-//		serviceRegistrationKnowledge(activeDrivingService);
+		serviceRegistrationKnowledge(activeDrivingService);
 
 		frontDistanceSensorAvailable = new DistanceSensorAvailable(context, ESensorLocation.FRONT);
-		frontDistanceSensorAvailable.serviceRegistration();
-//		serviceRegistrationKnowledge(frontDistanceSensorAvailable);
+		serviceRegistrationKnowledge(frontDistanceSensorAvailable);
 
 		rearDistanceSensorAvailable = new DistanceSensorAvailable(context, ESensorLocation.REAR);
-		rearDistanceSensorAvailable.serviceRegistration();
-//		serviceRegistrationKnowledge(rearDistanceSensorAvailable);
+		serviceRegistrationKnowledge(rearDistanceSensorAvailable);
 
 		lidarSensorAvailable = new LidarSensorAvailable(context);
-		lidarSensorAvailable.serviceRegistration();
-//		serviceRegistrationKnowledge(lidarSensorAvailable);
+		serviceRegistrationKnowledge(lidarSensorAvailable);
 
 		rightLineSensorAvailable = new LineSensorAvailable(context, ESensorLocation.RIGHT);
-		rightLineSensorAvailable.serviceRegistration();
-//		serviceRegistrationKnowledge(rightLineSensorAvailable);
+		serviceRegistrationKnowledge(rightLineSensorAvailable);
 
 		leftLineSensorAvailable = new LineSensorAvailable(context, ESensorLocation.LEFT);
-		leftLineSensorAvailable.serviceRegistration();
-//		serviceRegistrationKnowledge(leftLineSensorAvailable);
+		serviceRegistrationKnowledge(leftLineSensorAvailable);
 
 		notificationServiceAvailable = new NotificationServiceAvailable(context);
-		notificationServiceAvailable.serviceRegistration();
-//		serviceRegistrationKnowledge(notificationServiceAvailable);
+		serviceRegistrationKnowledge(notificationServiceAvailable);
 
 	}
 

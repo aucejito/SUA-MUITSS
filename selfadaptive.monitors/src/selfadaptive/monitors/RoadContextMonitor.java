@@ -10,7 +10,7 @@ import sua.autonomouscar.infrastructure.OSGiUtils;
 import sua.autonomouscar.interfaces.ERoadStatus;
 import sua.autonomouscar.interfaces.ERoadType;
 
-public class RoadContextMonitor {
+public class RoadContextMonitor{
 
 	protected BundleContext context;
 
@@ -18,7 +18,7 @@ public class RoadContextMonitor {
 		// TODO Auto-generated constructor stub
 		context = ctx;
 	}
-
+	
 	public void modifyRoadType(ERoadType newRoadType) {
 		RoadType roadType = OSGiUtils.getService(context, RoadType.class);
 		ERoadType currentRoadType = roadType.getRoadType();
@@ -27,7 +27,7 @@ public class RoadContextMonitor {
 			System.out.print("Road Status changed to " + newRoadType);
 		}
 	}
-
+	
 	public void modifyRoadStatus(ERoadStatus newRoadStatus) {
 		RoadStatus roadStatus = OSGiUtils.getService(context, RoadStatus.class);
 		ERoadStatus currentRoadStatus = roadStatus.getRoadStatus();
