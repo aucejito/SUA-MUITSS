@@ -3,13 +3,12 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Properties
 Bundle-SymbolicName: selfadaptive.properties
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: selfadaptive.properties
 Bundle-Activator: selfadaptive.properties.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Import-Package: org.osgi.framework;version="1.3.0"
+Automatic-Module-Name: selfadaptive.properties
+Require-Bundle: AutonomousCar.interfaces
 Export-Package: selfadaptive.properties,
  selfadaptive.properties.driver,
  selfadaptive.properties.road,
  selfadaptive.properties.system
-Bundle-RequiredExecutionEnvironment: JavaSE-17
-Automatic-Module-Name: selfadaptive.properties
-Import-Package: org.osgi.framework;version="1.3.0",
- sua.autonomouscar.interfaces

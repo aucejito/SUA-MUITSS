@@ -13,41 +13,41 @@ import sua.autonomouscar.interfaces.ERoadType;
 public class RoadContextMonitor {
 
 	protected BundleContext context;
-	
+
 	public RoadContextMonitor(BundleContext ctx) {
 		// TODO Auto-generated constructor stub
 		context = ctx;
 	}
-	
+
 	public void modifyRoadType(ERoadType newRoadType) {
 		RoadType roadType = OSGiUtils.getService(context, RoadType.class);
 		ERoadType currentRoadType = roadType.getRoadType();
-		if(currentRoadType != newRoadType && roadType != null) {
+		if (currentRoadType != newRoadType && roadType != null) {
 			roadType.setRoadType(newRoadType);
 		}
 	}
-	
+
 	public void modifyRoadStatus(ERoadStatus newRoadStatus) {
 		RoadStatus roadStatus = OSGiUtils.getService(context, RoadStatus.class);
 		ERoadStatus currentRoadStatus = roadStatus.getRoadStatus();
-		if(currentRoadStatus != newRoadStatus && roadStatus != null) {
+		if (currentRoadStatus != newRoadStatus && roadStatus != null) {
 			roadStatus.setRoadStatus(newRoadStatus);
-		} 
+		}
 	}
-	
+
 	public void modifyRoadTypeAvailable(boolean newAvailableStatus) {
 		RoadTypeAvailable roadTypeAvailable = OSGiUtils.getService(context, RoadTypeAvailable.class);
 		boolean currentRoadTypeAvailable = roadTypeAvailable.isAvailable();
-		if(currentRoadTypeAvailable != newAvailableStatus && roadTypeAvailable != null) {
+		if (currentRoadTypeAvailable != newAvailableStatus && roadTypeAvailable != null) {
 			roadTypeAvailable.setAvailable(currentRoadTypeAvailable);
-		} 
+		}
 	}
-	
+
 	public void modifyRoadStatusAvailable(boolean newAvailableStatus) {
 		RoadStatusAvailable roadStatusAvailable = OSGiUtils.getService(context, RoadStatusAvailable.class);
 		boolean currentRoadStatusAvailable = roadStatusAvailable.isAvailable();
-		if(currentRoadStatusAvailable != newAvailableStatus && roadStatusAvailable != null) {
+		if (currentRoadStatusAvailable != newAvailableStatus && roadStatusAvailable != null) {
 			roadStatusAvailable.setAvailable(currentRoadStatusAvailable);
-		} 
+		}
 	}
 }
