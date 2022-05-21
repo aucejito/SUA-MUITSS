@@ -42,4 +42,10 @@ public abstract class PropertyKnowledge {
 		this.serviceRegistration = serviceRegistration;
 	}
 
+	public ServiceRegistration<?> serviceRegistration() {
+		serviceRegistration = context.registerService(
+				this.implInterfacesList.toArray(new String[this.implInterfacesList.size()]), this, this.props);
+		return this.serviceRegistration;
+	}
+
 }
