@@ -24,6 +24,7 @@ public class RoadContextMonitor {
 		ERoadType currentRoadType = roadType.getRoadType();
 		if (currentRoadType != newRoadType && roadType != null) {
 			roadType.setRoadType(newRoadType);
+			System.out.print("Road Status changed to " + newRoadType);
 		}
 	}
 
@@ -32,6 +33,7 @@ public class RoadContextMonitor {
 		ERoadStatus currentRoadStatus = roadStatus.getRoadStatus();
 		if (currentRoadStatus != newRoadStatus && roadStatus != null) {
 			roadStatus.setRoadStatus(newRoadStatus);
+			System.out.print("Road Status changed to " + newRoadStatus);
 		}
 	}
 
