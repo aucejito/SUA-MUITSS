@@ -43,8 +43,6 @@ public class Activator implements BundleActivator {
 	}
 
 	public void stop(BundleContext bundleContext) throws Exception {
-		Activator.context = null;
-
 		context.removeServiceListener(cityToHighway);
 		this.cityToHighway = null;
 
@@ -60,6 +58,7 @@ public class Activator implements BundleActivator {
 		context.removeServiceListener(trafficJamToHighway);
 		this.trafficJamToHighway = null;
 
+		Activator.context = null;
 	}
 
 }
