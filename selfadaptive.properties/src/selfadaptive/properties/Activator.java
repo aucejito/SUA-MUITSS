@@ -45,7 +45,8 @@ public class Activator implements BundleActivator {
 	private ActiveDrivingService activeDrivingService;
 	private DistanceSensorAvailable frontDistanceSensorAvailable;
 	private DistanceSensorAvailable rearDistanceSensorAvailable;
-	private LidarSensorAvailable lidarSensorAvailable;
+	private LidarSensorAvailable frontLidarSensorAvailable;
+	private LidarSensorAvailable rearLidarSensorAvailable;
 	private LineSensorAvailable rightLineSensorAvailable;
 	private LineSensorAvailable leftLineSensorAvailable;
 	private NotificationServiceAvailable notificationServiceAvailable;
@@ -102,14 +103,17 @@ public class Activator implements BundleActivator {
 		rearDistanceSensorAvailable = new DistanceSensorAvailable(context, ESensorLocation.REAR);
 		serviceRegistrationKnowledge(rearDistanceSensorAvailable);
 
-		lidarSensorAvailable = new LidarSensorAvailable(context);
-		serviceRegistrationKnowledge(lidarSensorAvailable);
-
 		rightLineSensorAvailable = new LineSensorAvailable(context, ESensorLocation.RIGHT);
 		serviceRegistrationKnowledge(rightLineSensorAvailable);
 
 		leftLineSensorAvailable = new LineSensorAvailable(context, ESensorLocation.LEFT);
 		serviceRegistrationKnowledge(leftLineSensorAvailable);
+
+		rearLidarSensorAvailable = new LidarSensorAvailable(context, ESensorLocation.REAR);
+		serviceRegistrationKnowledge(rearDistanceSensorAvailable);
+
+		frontLidarSensorAvailable = new LidarSensorAvailable(context, ESensorLocation.FRONT);
+		serviceRegistrationKnowledge(frontLidarSensorAvailable);
 
 		notificationServiceAvailable = new NotificationServiceAvailable(context);
 		serviceRegistrationKnowledge(notificationServiceAvailable);
@@ -164,8 +168,11 @@ public class Activator implements BundleActivator {
 		rearDistanceSensorAvailable.getServiceRegistration().unregister();
 		rearDistanceSensorAvailable = null;
 
-		lidarSensorAvailable.getServiceRegistration().unregister();
-		lidarSensorAvailable = null;
+		frontLidarSensorAvailable.getServiceRegistration().unregister();
+		frontLidarSensorAvailable = null;
+
+		rearLidarSensorAvailable.getServiceRegistration().unregister();
+		rearLidarSensorAvailable = null;
 
 		rightLineSensorAvailable.getServiceRegistration().unregister();
 		rightLineSensorAvailable = null;
