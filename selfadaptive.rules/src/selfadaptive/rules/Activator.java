@@ -8,6 +8,7 @@ import selfadaptive.rules.ADS.L3_CCtoL3_TJC;
 import selfadaptive.rules.ADS.L3_HWCtoL3_TJC;
 import selfadaptive.rules.ADS.L3_TJCtoL3_CC;
 import selfadaptive.rules.ADS.L3_TJCtoL3_HWC;
+import selfadaptive.rules.driver.DriverEnvironment;
 import selfadaptive.rules.driver.DriverHaptics;
 
 public class Activator implements BundleActivator {
@@ -23,6 +24,7 @@ public class Activator implements BundleActivator {
 
 	// Driver-related
 	private DriverHaptics driverHaptics;
+	private DriverEnvironment driverEnvironment;
 
 	static BundleContext getContext() {
 		return context;
@@ -50,6 +52,9 @@ public class Activator implements BundleActivator {
 		// Driver-related
 		driverHaptics = new DriverHaptics(context);
 		context.addServiceListener(driverHaptics);
+
+		driverEnvironment = new DriverEnvironment(context);
+		context.addServiceListener(driverEnvironment);
 	}
 
 	public void stop(BundleContext bundleContext) throws Exception {
@@ -73,6 +78,9 @@ public class Activator implements BundleActivator {
 		// Driver-related
 		context.removeServiceListener(driverHaptics);
 		this.driverHaptics = null;
+
+		context.removeServiceListener(driverEnvironment);
+		this.driverEnvironment = null;
 
 		Activator.context = null;
 	}

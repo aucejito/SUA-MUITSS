@@ -15,9 +15,9 @@ public class DriverContextMonitor {
 		context = ctx;
 	}
 
-	public void modifyHandsOnTheWheel(boolean newValue) {
+	public void modifyHandsOnTheWheel(Boolean newValue) {
 		HandsOnTheWheel handsOn = OSGiUtils.getService(context, HandsOnTheWheel.class);
-		boolean currentHandsOnTheWheel = handsOn.getHandsOnTheWheel();
+		Boolean currentHandsOnTheWheel = handsOn.getHandsOnTheWheel();
 		if (currentHandsOnTheWheel != newValue && handsOn != null) {
 			handsOn.setHandsOnTheWheel(newValue);
 			System.out.println("[Monitor - DriverContextMonitor] ----> Hands On The Wheel changed to " + newValue);
@@ -33,7 +33,7 @@ public class DriverContextMonitor {
 		}
 	}
 
-	public void modifyDriverSeatOcuppied(boolean newValue) {
+	public void modifyDriverSeatOcuppied(Boolean newValue) {
 		DriverSeatOcuppied driverSeat = OSGiUtils.getService(context, DriverSeatOcuppied.class);
 		boolean currentDriverSeat = driverSeat.getDriverSeatOccupied();
 		if (currentDriverSeat != newValue && driverSeat != null) {
