@@ -23,7 +23,7 @@ public class SondaManosVolante extends ProbeCommon implements ServiceListener {
 	public void serviceChanged(ServiceEvent event) {
 		DriverContextMonitor driverMonitor = OSGiUtils.getService(context, DriverContextMonitor.class);
 		HandsOnWheelSensor handsSensor = OSGiUtils.getService(context, HandsOnWheelSensor.class);
-		driverMonitor.modifyHandsOnTheWheel(handsSensor.areTheHandsOnTheSteeringWheel());
+		// driverMonitor.modifyHandsOnTheWheel(handsSensor.areTheHandsOnTheSteeringWheel());
 
 	}
 }

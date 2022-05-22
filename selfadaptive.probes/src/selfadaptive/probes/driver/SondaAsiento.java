@@ -9,8 +9,9 @@ import selfadaptive.probes.ProbeCommon;
 import sua.autonomouscar.devices.interfaces.ISeatSensor;
 import sua.autonomouscar.infrastructure.OSGiUtils;
 
-public class SondaAsiento extends ProbeCommon implements ServiceListener{
+public class SondaAsiento extends ProbeCommon implements ServiceListener {
 	BundleContext context;
+
 	public SondaAsiento(BundleContext bundleContext) {
 		super(bundleContext);
 		context = bundleContext;
@@ -22,7 +23,7 @@ public class SondaAsiento extends ProbeCommon implements ServiceListener{
 	public void serviceChanged(ServiceEvent event) {
 		DriverContextMonitor driverMonitor = OSGiUtils.getService(context, DriverContextMonitor.class);
 		ISeatSensor seatSensor = OSGiUtils.getService(context, ISeatSensor.class);
-		driverMonitor.modifyHandsOnTheWheel(seatSensor.isSeatOccuppied());
-		
+		// driverMonitor.modifyHandsOnTheWheel(seatSensor.isSeatOccuppied());
+
 	}
 }
