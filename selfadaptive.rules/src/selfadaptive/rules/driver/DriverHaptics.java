@@ -42,13 +42,17 @@ public class DriverHaptics implements ServiceListener {
 
 			if (handsOnTheWheel.getHandsOnTheWheel()) {
 				notificationService.addInteractionMechanism(steeringWheelVibration.getId());
+				System.out.println("[Rule - DriverHaptics] ----> Adding Steering Wheel Vibration");
 			} else {
 				notificationService.removeInteractionMechanism(steeringWheelVibration.getId());
+				System.out.println("[Rule - DriverHaptics] ----> Removing Steering Wheel Vibration");
 			}
 			if (driverSeat.getDriverSeatOccupied()) {
 				notificationService.addInteractionMechanism(driverSeatVibration.getId());
+				System.out.println("[Rule - DriverHaptics] ----> Adding Driver Seat Vibration");
 			} else {
 				notificationService.removeInteractionMechanism(driverSeatVibration.getId());
+				System.out.println("[Rule - DriverHaptics] ----> Removing Driver Seat Vibration");
 			}
 
 		}
