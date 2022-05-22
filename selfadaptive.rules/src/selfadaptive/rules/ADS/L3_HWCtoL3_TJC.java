@@ -32,7 +32,7 @@ public class L3_HWCtoL3_TJC implements ServiceListener {
 		currentDrivingService = OSGiUtils.getService(context, IDrivingService.class,
 				String.format("(%s=%s)", DrivingService.ACTIVE, true));
 		roadStatus = OSGiUtils.getService(context, RoadStatus.class);
-		roadType = OSGiUtils.getService(context, RoadType.class, "roadtype");
+		roadType = OSGiUtils.getService(context, RoadType.class);
 
 		if (currentDrivingService instanceof IL3_HighwayChauffer
 				&& (roadStatus.getRoadStatus() == ERoadStatus.JAM

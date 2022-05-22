@@ -28,7 +28,7 @@ public class L3_TJCtoL3_CC implements ServiceListener {
 	public void serviceChanged(ServiceEvent event) {
 		currentDrivingService = OSGiUtils.getService(context, IDrivingService.class,
 				String.format("(%s=%s)", DrivingService.ACTIVE, true));
-		roadType = OSGiUtils.getService(context, RoadType.class, "roadtype");
+		roadType = OSGiUtils.getService(context, RoadType.class);
 
 		if (currentDrivingService instanceof IL3_TrafficJamChauffer && roadType.getRoadType() == ERoadType.CITY) {
 			currentDrivingService.stopDriving();
