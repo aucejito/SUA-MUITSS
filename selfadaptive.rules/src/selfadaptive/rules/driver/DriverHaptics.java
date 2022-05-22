@@ -36,9 +36,9 @@ public class DriverHaptics implements ServiceListener {
 			notificationService = OSGiUtils.getService(context, NotificationService.class);
 
 			HapticVibration steeringWheelVibration = OSGiUtils.getService(context, HapticVibration.class,
-					"id=SteeringWheel_HapticVibration");
+					"(id=SteeringWheel_HapticVibration)");
 			HapticVibration driverSeatVibration = OSGiUtils.getService(context, HapticVibration.class,
-					"id=DriverSeat_HapticVibration");
+					"(id=DriverSeat_HapticVibration)");
 
 			if (handsOnTheWheel.getHandsOnTheWheel()) {
 				notificationService.addInteractionMechanism(steeringWheelVibration.getId());

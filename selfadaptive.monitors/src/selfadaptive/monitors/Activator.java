@@ -35,6 +35,10 @@ public class Activator implements BundleActivator {
 		this.roadContextMonitorServiceRegistration.unregister();
 		this.roadContextMonitorServiceRegistration = null;
 		this.roadContextMonitor = null;
+		
+		this.driverContexServiceRegistration.unregister();
+		this.roadContextMonitorServiceRegistration = null;
+		this.driverContextMonitor = null;
 
 		Activator.context = null;
 	}

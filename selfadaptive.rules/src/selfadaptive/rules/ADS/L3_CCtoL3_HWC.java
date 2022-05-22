@@ -30,8 +30,8 @@ public class L3_CCtoL3_HWC implements ServiceListener {
 	public void serviceChanged(ServiceEvent event) {
 		currentDrivingService = OSGiUtils.getService(context, IDrivingService.class,
 				String.format("(%s=%s)", DrivingService.ACTIVE, true));
-		roadStatus = OSGiUtils.getService(context, RoadStatus.class, "roadstatus");
-		roadType = OSGiUtils.getService(context, RoadType.class, "roadtype");
+		roadStatus = OSGiUtils.getService(context, RoadStatus.class);
+		roadType = OSGiUtils.getService(context, RoadType.class);
 
 		if (currentDrivingService instanceof IL3_CityChauffer && roadType.getRoadType() == ERoadType.HIGHWAY
 				&& roadStatus.getRoadStatus() == ERoadStatus.FLUID) {

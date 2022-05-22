@@ -13,10 +13,10 @@ public class HandsOnTheWheel extends PropertyKnowledge{
 	}
 	
 	public void setHandsOnTheWheel(boolean status) {
-		modifyKnowledge("handsonthewheel", status);
+		modifyKnowledge("hands-on-wheel", status);
 	}
 
 	public boolean getHandsOnTheWheel() {
-		return (boolean) props.get("handsonthewheel");
+		return (boolean) props.get("hands-on-wheel");
 	}
 }
