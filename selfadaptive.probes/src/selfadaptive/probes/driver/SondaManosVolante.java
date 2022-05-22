@@ -6,11 +6,12 @@ import org.osgi.framework.ServiceListener;
 
 import selfadaptive.monitors.DriverContextMonitor;
 import selfadaptive.probes.ProbeCommon;
-import sua.autonomouscar.devices.interfaces.IHandsOnWheelSensor;
 import sua.autonomouscar.infrastructure.OSGiUtils;
+import sua.autonomouscar.infrastructure.devices.HandsOnWheelSensor;
 
 public class SondaManosVolante extends ProbeCommon implements ServiceListener {
 	BundleContext context;
+
 	public SondaManosVolante(BundleContext bundleContext) {
 		super(bundleContext);
 		context = bundleContext;
@@ -21,8 +22,8 @@ public class SondaManosVolante extends ProbeCommon implements ServiceListener {
 	@Override
 	public void serviceChanged(ServiceEvent event) {
 		DriverContextMonitor driverMonitor = OSGiUtils.getService(context, DriverContextMonitor.class);
-		IHandsOnWheelSensor handsSensor = OSGiUtils.getService(context, IHandsOnWheelSensor.class);
+		HandsOnWheelSensor handsSensor = OSGiUtils.getService(context, HandsOnWheelSensor.class);
 		driverMonitor.modifyHandsOnTheWheel(handsSensor.areTheHandsOnTheSteeringWheel());
-		
+
 	}
 }
